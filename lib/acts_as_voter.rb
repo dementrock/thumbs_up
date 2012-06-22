@@ -66,16 +66,16 @@ module ThumbsUp #:nodoc:
         self.vote(voteable, { :direction => :down, :exclusive => false })
       end
 
-      def vote_exclusively(votable, vote)
-        self.vote(votable, { :direction => (vote ? :up : :down), :exclusive => true })
-      end
-
       def vote_exclusively_for(voteable)
         self.vote(voteable, { :direction => :up, :exclusive => true })
       end
 
       def vote_exclusively_against(voteable)
         self.vote(voteable, { :direction => :down, :exclusive => true })
+      end
+
+      def vote_exclusively(votable, vote)
+        self.vote(votable, { :direction => (vote ? :up : :down), :exclusive => true })
       end
 
       def vote(voteable, options = {})
